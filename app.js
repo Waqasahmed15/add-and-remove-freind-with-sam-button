@@ -1,20 +1,19 @@
-var istatus = document.querySelector("h5");
-var btn = document.querySelector("#add");
-var img = document.querySelector("img");
-var check = 0;
-
-btn.addEventListener("click", function () {
-  if (check == 0) {
-    istatus.innerHTML = "Freinds";
-    istatus.style.color = "green";
-    btn.innerHTML = "Remove Freind";
-
-    check = 1;
-  } else {
-    istatus.innerHTML = "unfreind";
-    istatus.style.color = "red";
-    btn.innerHTML = "Add Freind";
-
-    check = 0;
-  }
+const buttons = document.querySelectorAll(".button");
+const body = document.querySelector("body");
+buttons.forEach(function (button) {
+  button.addEventListener("click", function (e) {
+    if (e.target.id === "gray") {
+      body.style.background = e.target.id;
+      body.style.color = "white";
+    } else if (e.target.id === "white") {
+      body.style.background = e.target.id;
+      body.style.color = "black";
+    } else if (e.target.id === "blue") {
+      body.style.background = e.target.id;
+      body.style.color = "white";
+    } else {
+      body.style.background = e.target.id;
+      body.style.color = "tomato";
+    }
+  });
 });
